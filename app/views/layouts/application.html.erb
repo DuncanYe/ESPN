@@ -11,7 +11,11 @@
 
   <body>
     <%= link_to 'Post message', new_message_path %> |
-    <%= link_to 'ESPN', root_path %>
+    <%= link_to 'ESPN', root_path %> |
+    <%= link_to 'Sign up', new_user_registration_path %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
