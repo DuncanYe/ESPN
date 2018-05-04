@@ -7,11 +7,11 @@ class MessagesController < ApplicationController
   end
 
   def new
-    @message = Message.new
+    @message = current_user.messages.create
   end
 
   def create
-    @message = Message.create(params_message)
+    @message = current_user.messages.create(params_message)
     if @message.save
       redirect_to @message
     else
@@ -20,6 +20,7 @@ class MessagesController < ApplicationController
   end
 
   def show
+    @comment = @message.comments.new
   end
 
   def edit
