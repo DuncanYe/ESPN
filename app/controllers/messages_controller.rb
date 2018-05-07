@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @comment = @message.comments.new
+    @comment = Comment.new
   end
 
   def edit
