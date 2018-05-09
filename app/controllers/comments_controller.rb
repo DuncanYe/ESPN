@@ -29,6 +29,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
+    flash[:notice] = "留言已刪除"
     redirect_to message_path(@message)
   end
 
@@ -39,7 +40,7 @@ class CommentsController < ApplicationController
   end
 
   def find_message
-    @message = Message.find(params[:message_id])
+    @message = Message.find( params[:message_id])
   end
 
   def find_comment
