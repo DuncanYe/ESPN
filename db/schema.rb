@@ -11,7 +11,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_05_04_110819) do
+=======
+ActiveRecord::Schema.define(version: 2018_05_04_115853) do
+>>>>>>> comment
 =======
 ActiveRecord::Schema.define(version: 2018_05_04_115853) do
 >>>>>>> comment
@@ -22,6 +26,10 @@ ActiveRecord::Schema.define(version: 2018_05_04_115853) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    t.integer "user_id"
+>>>>>>> comment
 =======
     t.integer "user_id"
 >>>>>>> comment
