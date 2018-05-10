@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :find_message, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -20,6 +20,7 @@ class MessagesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
   end
 
   def edit

@@ -4,11 +4,28 @@
     <p class="message-posted-by"><%= time_ago_in_words(@message.created_at) %> ago</p>
     <p class="message-desc"><%= @message.description %></p>
 
+    <h3 class="comment-header">Comments: </h3>
+    <p><%= render partial: 'comments/comment', locals: { message: @message } %></p>
+
+    <h3 class="comments">Join Discussion: </h3>
+    <%= render partial: 'comments/form', locals: {message: @message, comment: @comment} %>
+    
+
+
     <div class="link-group">
       <%= link_to 'Back', root_path, class: 'btn btn-default' %>
-      <%= link_to 'Fix', edit_message_path(@message), class: 'btn btn-primary' %>
-      <%= link_to 'Delete', message_path(@message), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+      <% if user_signed_in? %>
+        <% if @message.user_id == current_user.id %>
+          <%= link_to 'Fix', edit_message_path(@message), class: 'btn btn-primary' %>
+          <%= link_to 'Delete', message_path(@message), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+        <% end %>  
+      <% end %>  
     </div>
+
+<<<<<<< HEAD
+    
+=======
+>>>>>>> comment
   </div>
 </div>
 

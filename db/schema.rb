@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_05_04_110819) do
+=======
+ActiveRecord::Schema.define(version: 2018_05_04_115853) do
+>>>>>>> comment
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.integer "message_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
+=======
+    t.integer "user_id"
+>>>>>>> comment
     t.index ["message_id"], name: "index_comments_on_message_id"
   end
 
